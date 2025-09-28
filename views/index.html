@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     /* ---------- Responsive ---------- */
+    /* Prevent horizontal scroll globally */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix containers so they don’t overflow */
+.container, 
+.rating-container, 
+.benefit {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make images scale properly */
+.head-img img,
+.benefit-img img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* removes inline spacing issues */
+}
+.navbar-small{
+  display: none;
+}
+
+    /* ---------- Media Queries ---------- */
+    @media (min-width: 1024px) {
+      .head-text h1 {
+        font-size: 3.5rem;
+      }
+      .benefit-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+    }
+    @media (max-width: 991px) {
+      /* .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+      } */
+       .head-img{
+        padding-top: 100px;
+       }
+      #rating {
+        padding: 2rem 1rem;
+      }
+      .benefit {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+      }
+      .benefit-img {
+        margin-bottom: 1.5rem;
+      }
+      .rate-star {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+              .about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-text{
+            text-align: center;
+            padding-right: 0;
+            padding-top: 10px;
+        }
+        .about-img img{
+            max-width: 100%;
+            height: auto;
+        }
+        .section-subtitle{
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .newsletter{
+            padding: 60px 60px 60px 60px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+        .newsletter-img img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media (max-width: 576px) {
+      .nav-lg{
+        display: none;
+      }
+        .navbar-small{
+            display: block;
+        }
+      .container {
+        padding: 1rem;
+      }
+      .head-text h1 {
+        font-size: 2rem;
+      }
+      .text-line{
+        display: none;
+      }
+      .head-img{
+        display: none;
+      }
+      .benefit-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .rate-star {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+      .rate{
+        height: 158.4px;
+      }
+      .products{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 50px 20px 50px 20px;
+        }
+        .about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-text{
+            text-align: center;
+            padding-right: 0;
+            padding-top: 10px;
+        }
+        .about-img img{
+            max-width: 100%;
+            height: auto;
+        }
+        .section-subtitle{
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .newsletter{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+        .newsletter-img img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+<section id="navbar">
+    <nav class="nav-lg">
+      <div class="nav-container">
+        <h1 class="nav-logo">Sélène</h1>
+        <ul class="nav-links">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#Products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonial">Testimonials</a></li>
+        </ul>
+        <a href="#newsletter" class="nav-button">Subscribe</a>
+      </div>
+    </nav>
+        <div class="navbar-small">
+        <nav class="nav-sm">
+        <span>
+        <h1 class="nav-logo">Sélène</h1>
+        </span>
+        <span>
+        <details>
+        <summary><i class="fa-solid fa-bars"></i></summary>
+        <ul class="nav-links-sm">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#Products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonial">Testimonials</a></li>
+            </details>
+            </span>
+        </nav>
+        </div>
+</section>
+<section id="header">
+
+    <div class="container">
+      <div class="head-text">
+        <p>Free Delivery World Wide</p>
+        <h1>Feed Your Skin,<br>Find Your Glow.</h1>
+        <p><strong>Natural Inner Beauty</strong></p>
+        <p>Enhance Your Radiance with Clean, Science-Driven Skincare – Cruelty-free, <br>
+           Sustainable and Enriched with Antioxidants for Healthy, Timeless Skin</p>
+        <!-- <hr class="text-line"> -->
+        <div>
+          <a href="#newsletter" class="nav-button">Subscribe →</a>
+        </div>
+      </div>
+      <div class="head-img">
+        <img src="/Hero.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Rating -->
+  <section id="rating">
+    <div class="rating-container">
+      <div class="rate-text">
+        <p>Trusted by over 10,000+ clients <br> worldwide since 2018</p>
+      </div>
+      <div class="rate-star">
+        <div class="rate">
+          <p class="number">4.8</p>
+          <p class="stars">★★★★★</p>
+          <p>4,300 ratings</p>
+        </div>
+        <div class="rate">
+          <p class="number">1.7M</p>
+          <p>Worldwide Products</p>
+          <p>Sold per year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits">
+    <div class="section-title">
+      <p class="subtitle heading">Benefits</p>
+      <h1>Here at Sélène, Healthy Skin Means A Healthier You</h1>
+    </div>
+    <div class="benefit">
+      <div class="benefit-img">
+        <img src="/Benefits.png" alt="">
+      </div>
+      <div class="benefit-text">
+        <div class="benefit-item">
+          <i class="fas fa-tint"></i>
+          <div>
+            <h3>Deep Hydration</h3>
+            <p>Locks in moisture to keep skin supple, smooth and comfortable throughout the day.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-star-half-stroke"></i>
+          <div>
+            <h3>Radiance Boost</h3>
+            <p>Enriched with natural antioxidants to revive dullness and enhance your skin's natural glow.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-heart"></i>
+          <div>
+            <h3>Skin Barrier Support</h3>
+            <p>Strengthens your skin barrier for long-lasting protection and comfort.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-leaf"></i>
+          <div>
+            <h3>Eco-Friendly Care</h3>
+            <p>Sustainably sourced ingredients that are safe for you and the planet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Products">
+    <h1 class="product-head">Check Out Our Products</h1>
+    <div class="products">
+  <div class="product">
+    <span><i class="fas fa-pump-soap fa-3x p-4"></i></span>
+    <p>Cream</p>
+  </div>
+  <div class="product">
+    <span ><i class="fas fa-eye-dropper fa-3x p-4"></i></span>
+    <p>Serum</p>
+  </div>
+  <div class="product">
+    <span><i class="fas fa-pump-soap fa-3x p-4"></i></span>
+    <p>Lotion</p>
+  </div>
+  <div class="product">
+    <span><i class="fas fa-sun fa-3x p-4"></i></span>
+    <p>Sunscreen</p>
+  </div>
+  <div class="product">
+    <span><i class="fas fa-wine-bottle fa-3x p-4"></i></span>
+    <p>Coconut Oil</p>
+  </div>
+</div>
+<div class="button-container">
+    <a href="" class="product-btn">View Collection</a>
+</div>
+  </section>
+<section id="about">
+    <div class="about">
+        <div class="about-text">
+            <div class="section-subtitle">
+            <span>About Us</span>
+            </div>
+            <h1 class="section-title">The Heart of Sélène</h1>
+            <p>
+            At Sélène, we believe that radiant skin starts with the purest ingredients and <br>the gentlest care.
+            Our mission is simple: to craft skincare that’s as nourishing for your <br> well-being as it is kind to the planet.
+            Inspired by nature and guided by science,every Aureis <br> product blends potent botanical extracts with proven active ingredients to deliver <br>visible results without compromise.
+            </p>
+
+        </div>
+        <div class="about-img">
+            <img src="/About.png" alt="">
+        </div>
+    </div>
+</section>
+<section id="testimonial">
+   <h1 class="testimonial-head">See What Our Customers Have To Say</h1>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Duplicate cards for infinite effect -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://i.pravatar.cc/40?img=1" alt="profile">
+          <h4>By Emily R.</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p>“I've tried countless serums, but this Glow Serum is next-level. Within a week, my skin looked brighter and smoother. Worth every penny!”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://i.pravatar.cc/40?img=2" alt="profile">
+          <h4>By Tom F.</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p>“As someone with eczema, I'm cautious with new products. This cream calmed my redness overnight. Hydration that lasts all day.”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://i.pravatar.cc/40?img=3" alt="profile">
+          <h4>By Dan E.</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p>“From packaging to effect, this mask transformed my dry skin overnight. Woke up plump and dewy. Obsessed!”</p>
+      </div>
+
+      <!-- repeat testimonials again for smooth looping -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://i.pravatar.cc/40?img=1" alt="profile">
+          <h4>By Emily R.</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p>“I've tried countless serums, but this Glow Serum is next-level. Within a week, my skin looked brighter and smoother. Worth every penny!”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://i.pravatar.cc/40?img=2" alt="profile">
+          <h4>By Tom F.</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p>“As someone with eczema, I'm cautious with new products. This cream calmed my redness overnight. Hydration that lasts all day.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="newsletter">
+    <div class="newsletter">
+    <div class="newsletter-text">
+    <h1>Subscribe to our <br>newsletter</h1>
+    <p>Subscribe to our newsletter and become part of a community that 
+       believes in radiant skin and a radiant planet.</p>
+    <form class="form">
+      <input type="email" placeholder="Enter your email here" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    </div>
+    <div class="newsletter-img">
+        <img src="/Newsletter.png" alt="">
+    </div>
+    </div>
+</section>
+<section id="footer">
+      <footer>
+    <!-- Brand + Contact -->
+    <div class="footer-col">
+      <h3>Sélène</h3>
+      <div class="contact-info">
+        <p><i class="fa-solid fa-phone"></i> Tel: +77 9885778643</p>
+        <p><i class="fa-solid fa-envelope"></i> aurea@support.com</p>
+        <p><i class="fa-solid fa-clock"></i> Mon-Sat 8am - 9pm GMT</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Products</a></li>
+        <li><a href="#">Collection</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Subscribe</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-col">
+      <h3>Social Media</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+</body>
+</html>
