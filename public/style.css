@@ -68,6 +68,9 @@ nav {
     flex-direction: row;
     justify-content: space-between;
 }
+.fa-bars{
+  font-size: larger;
+}
 span h1{
     margin: 0;
 }
@@ -352,7 +355,7 @@ hr {
     .carousel-track {
       display: flex;
       gap: 20px;
-      animation: scroll 10s linear infinite;
+      animation: scroll 9s linear infinite;
     }
 
     .carousel-container:hover .carousel-track {
