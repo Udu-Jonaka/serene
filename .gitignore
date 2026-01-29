@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 /_legacy
-node_modules
+node_modules/
